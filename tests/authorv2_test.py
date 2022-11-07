@@ -8,10 +8,10 @@ class AuthorParserV2Test(unittest.TestCase):
         self.sample_author = {
             'id': '123',
             'username': 'juanzin',
-            'description': 'My name is juanzin',
+            'description': None,
             'public_metrics': {
                 'followers_count': '123',
-                'following_count': '123',
+                'following_count': 123,
                 'tweet_count': '123',
                 'listed_count': '123'
             },
@@ -25,9 +25,9 @@ class AuthorParserV2Test(unittest.TestCase):
         expected_author = {
             'id': '123',
             'username': 'juanzin',
-            'description': 'My name is juanzin',
+            'description': None,
             'followers_count': '123',
-            'following_count': '123',
+            'following_count': 123,
             'tweet_count': '123',
             'listed_count': '123',
             'verified': 'true',
@@ -40,8 +40,8 @@ class AuthorParserV2Test(unittest.TestCase):
             self.sample_author, exclude=['id', 'followers_count'])
         expected_author = {
             'username': 'juanzin',
-            'description': 'My name is juanzin',
-            'following_count': '123',
+            'description': None,
+            'following_count': 123,
             'tweet_count': '123',
             'listed_count': '123',
             'verified': 'true',
