@@ -4,7 +4,7 @@ from abc import ABC, abstractmethod
 class SubParser(ABC):
 
     @abstractmethod
-    def parse_field(self, entity: dict()) -> dict:
+    def parse_field(self, entity: dict) -> dict:
         pass
 
 
@@ -14,5 +14,5 @@ class Parser(ABC):
         self.parsers = parsers
 
     @abstractmethod
-    def parse(self, entity: dict, exclude=list()) -> list:
+    def parse(self, entity: dict) -> list:
         pass
