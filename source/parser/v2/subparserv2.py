@@ -15,5 +15,21 @@ class MetricsParserV2(SubParser):
             entity[key] = entity['public_metrics'][key]
         return entity
 
-    def get_parsed_field(self) -> str:
-        return 'public_metrics'
+
+class AuthorParserV2(SubParser):
+
+    metrics_parser = MetricsParserV2()
+
+    def parse_field(self, entity: dict()) -> dict:
+        if 'author' not in entity:
+            raise KeyError('\'author\' does not exist.')
+        entity = self.add_author_values(entity)
+        del entity['author']
+        return entity
+
+    def add_author_values(self, entity: dict) -> dict:
+        for key in entity['author']:
+            entity[key] = entity['author'][key]
+        if 'public_metrics' in entity:
+            entity = self.metrics_parser.parse_field(entity)
+        return entity

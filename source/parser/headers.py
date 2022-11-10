@@ -7,10 +7,6 @@ class SubParser(ABC):
     def parse_field(self, entity: dict()) -> dict:
         pass
 
-    @abstractmethod
-    def get_parsed_field(self) -> str:
-        pass
-
 
 class Parser(ABC):
 

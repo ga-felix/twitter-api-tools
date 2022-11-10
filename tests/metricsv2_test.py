@@ -40,6 +40,5 @@ class MetricsParserV2Test(unittest.TestCase):
             }
         self.assertEquals(parsed_metrics, expected_output)
 
-    def test_get_parsed_field(self):
-        field_name = self.metrics_parser.get_parsed_field()
-        self.assertTrue(field_name == 'public_metrics')
+    def test_parse_missing_metrics(self):
+        self.assertRaises(KeyError, self.metrics_parser.parse_field, dict())
