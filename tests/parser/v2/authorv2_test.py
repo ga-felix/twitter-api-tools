@@ -1,5 +1,5 @@
 import unittest
-from source.parser import AuthorParserV2
+from source.parser import AuthorParserV2, MetricsParserV2
 
 
 class AuthorParserV2Test(unittest.TestCase):
@@ -19,7 +19,7 @@ class AuthorParserV2Test(unittest.TestCase):
                 'verified': 'true',
                 'created_at': '2013-12-14T04:35:55.000Z'
             }}
-        self.author_parser = AuthorParserV2()
+        self.author_parser = AuthorParserV2(MetricsParserV2())
 
     def test_parse(self):
         found_author = self.author_parser.parse_field(self.sample_author)
