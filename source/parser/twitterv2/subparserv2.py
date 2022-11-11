@@ -1,7 +1,7 @@
 from ..headers import SubParser
 
 
-class MetricsParserV2(SubParser):
+class TwitterMetricsParser(SubParser):
 
     def parse_field(self, entity: dict) -> dict:
         if 'public_metrics' not in entity:
@@ -16,7 +16,7 @@ class MetricsParserV2(SubParser):
         return entity
 
 
-class AuthorParserV2(SubParser):
+class TwitterAuthorParser(SubParser):
 
     def __init__(self, metrics_parser: SubParser):
         self.metrics_parser = metrics_parser

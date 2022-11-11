@@ -1,11 +1,11 @@
 import unittest
-from source.parser import MetricsParserV2
+from source.parser import TwitterMetricsParser
 
 
-class MetricsParserV2Test(unittest.TestCase):
+class TwitterMetricsParserTest(unittest.TestCase):
 
     def setUp(self):
-        self.metrics_parser = MetricsParserV2()
+        self.metrics_parser = TwitterMetricsParser()
         self.metrics = {
             'public_metrics': {
                 'followers_count': '123',

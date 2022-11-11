@@ -1,8 +1,8 @@
-from source.parser import ParserV2, MetricsParserV2, AuthorParserV2
+from source.parser import TwitterParser, TwitterMetricsParser, TwitterAuthorParser
 
 
-tparser = MetricsParserV2()
-metric_parser = ParserV2(tparser)
+tparser = TwitterMetricsParser()
+metric_parser = TwitterParser(tparser)
 author = {'author': {
                 'id': '123',
                 'username': 'juanzin',
@@ -16,5 +16,5 @@ author = {'author': {
                 'verified': 'true',
                 'created_at': '2013-12-14T04:35:55.000Z'
             }}
-author_parser = AuthorParserV2()
+author_parser = TwitterAuthorParser()
 print(author_parser.parse_field(author))

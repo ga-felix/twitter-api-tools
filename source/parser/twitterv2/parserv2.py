@@ -1,7 +1,7 @@
 from ..headers import Parser
 
 
-class ParserV2(Parser):
+class TwitterParser(Parser):
 
     def parse(self, entity: dict) -> dict:
         if not entity:

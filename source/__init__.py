@@ -1,1 +1,1 @@
-from .parser import v2
+from .parser import twitterv2
