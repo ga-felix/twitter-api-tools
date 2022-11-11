@@ -18,7 +18,8 @@ class MetricsParserV2(SubParser):
 
 class AuthorParserV2(SubParser):
 
-    metrics_parser = MetricsParserV2()
+    def __init__(self, metrics_parser: SubParser):
+        self.metrics_parser = metrics_parser
 
     def parse_field(self, entity: dict) -> dict:
         if 'author' not in entity:
